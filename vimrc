@@ -1,11 +1,11 @@
-﻿let $LANG="zh_TW.UTF-8"
+let $LANG="zh_TW.UTF-8"
 set termencoding=utf8
 set encoding=utf-8
 
 set tabstop=4 "設定tab在vim裡頭佔用的空白格數
 "set expandtab "把tab轉為空白,即為按下tab時,實際上是4格空白
 
-set gfn=Courier_New:h10
+"set gfn=Courier_New:h10
 "複製資料到buffer內,才能用yy,p
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
@@ -38,7 +38,7 @@ function MyDiff()
 endfunction
 
 set cindent
-set nu
+"set nu
 set smartindent
 "設定不產生備份檔案
 set nobackup
@@ -62,8 +62,8 @@ colorscheme desert "改變vim顏色
 syntax on
 set ls=2 "laststatus
 set statusline=[%n]
-set statusline+=%«\  "cut at start
-set statusline+=%«%F "顯示檔案名稱
+set statusline+=%<\  "cut at start
+set statusline+=%<%F "顯示檔案名稱
 set statusline+=\ [%{(&fenc==\"\")?&enc:&fenc}, " encoding
 set statusline+=%{&fileformat} " file format
 set statusline+=%{(&bomb?\",BOM\":\"\")}] " detect bomb
