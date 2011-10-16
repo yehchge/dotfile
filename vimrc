@@ -10,7 +10,7 @@ set tabstop=4 "設定tab在vim裡頭佔用的空白格數
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
-behave mswin "xterm mswin
+"behave mswin "xterm mswin
 
 set diffexpr=MyDiff()
 function MyDiff()
