@@ -11,6 +11,7 @@ set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 "behave mswin "xterm mswin
+set gfn=Monospace\ 12
 
 set diffexpr=MyDiff()
 function MyDiff()

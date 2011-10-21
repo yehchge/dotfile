@@ -32,7 +32,8 @@ endfunction
 let $LANG="zh_TW.UTF-8"
 set termencoding=utf8
 set encoding=utf-8
-set gfn=Courier_New:h10
+"set gfn=Courier_New:h10
+set gfn=Monospace\ 12
 "behave xterm
 
 set tabstop=4    "設定tab在vim裡頭佔的空白格數
