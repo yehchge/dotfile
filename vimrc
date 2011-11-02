@@ -10,8 +10,8 @@ set tabstop=4 "設定tab在vim裡頭佔用的空白格數
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
-"behave mswin "xterm mswin
-set gfn=Monospace\ 12
+behave mswin "xterm mswin
+set gfn=Monospace\ 14
 
 set diffexpr=MyDiff()
 function MyDiff()
@@ -126,8 +126,8 @@ let g:molokai_original = 1
 """""""""""
 " tags
 """""""""""
-let Tlist_Ctags_Cmd='C:\vim\vim72\ctags.exe'
-let g:showfuncctagsbin = 'c:\\vim\\vim72\\ctags.exe'
+"let Tlist_Ctags_Cmd='C:\vim\vim72\ctags.exe'
+"let g:showfuncctagsbin = 'c:\\vim\\vim72\\ctags.exe'
 
 set tags=tags;
 set autochdir
@@ -169,7 +169,6 @@ let g:winManagerWindowLayout = "FileExplorer"
 "let g:miniBufExplMapCTabSwitchBufs = 1
 "let g:miniBufExplModSelTarget = 1
 
-
 ":menu File.Save :w^M
 ":inoremenu File.Save ^O:w^M
 ":menu Edit.Big\ Changes.Delete\ All\ Space :%s/[ ^I]//g^M
@@ -182,7 +181,7 @@ let g:winManagerWindowLayout = "FileExplorer"
 ":amenu ToolBar.BuiltIn22 :call SearchNext("back")«CR»
 ":amenu ToolBar.Hello :echo "hello"«CR»
 ":amenu ToolBar.Open :e
-:amenu FunctionList.ShowToggle :Tlist«CR»
+":amenu FunctionList.ShowToggle :Tlist«CR»
 
 
 ":cd C:\data\sites\source

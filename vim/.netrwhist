@@ -1,8 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/yehchge'
-let g:netrw_dirhist_2='/home/yehchge/dotfile'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/yehchge/桌面/com_payment_01/site/views'
+let g:netrw_dirhist_2='/home/yehchge/桌面/com_payment_01/site'
 let g:netrw_dirhist_3='/home/yehchge'
 let g:netrw_dirhist_4='/home/yehchge/dotfile'
-let g:netrw_dirhist_5='/home/yehchge'
-let g:netrw_dirhist_6='/home/yehchge/dotfile'
