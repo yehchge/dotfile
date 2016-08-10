@@ -321,3 +321,24 @@ set foldlevel=2 " 預設全部關閉
 let php_folding = 1 " 這個很重要
 set foldnestmax=3
 
+橫切視窗 (也可用Ctrl-W  + S)
+:sp filename
+
+直切視窗 (也可以用Ctrl-W + V)
+:vsp filename
+
+Ctrl-w +(放大)
+Ctrl-w -(縮小)
+Ctrl-w _(放到最大)
+Ctrl-w =(回復各一半)
+:vsp 視窗放大縮小可用
+Ctrl-w |(放到最大)
+Ctrl-w =(回復各一半)
+
+:set mouse=a   啟動滑鼠功能
+
+
+
+
+
+
