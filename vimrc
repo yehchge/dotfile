@@ -40,9 +40,6 @@ set showmode			" Show current mode
 set wildchar=<TAB>		" start wild expansion in the command line using <TAB>
 set wildmenu            " wild char completion menu
 
-" ignore these files while expanding wild chars
-set wildignore=*.o,*.class,*.pyc
-
 set autoindent		" auto indentation , or set ai(自動縮排)
 set incsearch		" incremental search
 set nobackup		" no *~ backup files(設定不產生備份檔案)
@@ -59,35 +56,6 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
-
-source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-behave mswin "xterm mswin
-
-set diffexpr=MyDiff()
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\«cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' » ' . arg3 . eq
-endfunction
 
 let $LANG="zh_TW.UTF-8"
 set termencoding=utf8
@@ -139,24 +107,8 @@ let php_htmlInStrings=1
 " 顏色設定
 colorscheme desert "desert molokai
 
-" colo set
-let g:molokai_original = 1
-
-set tags=tags;
-set autochdir
-set tagrelative
 
 set selectmode=mouse
 "set fileencoding=taiwan
 nmap l <End>
 
-" 設定摺疊
-set foldmarker={{{,}}}
-set foldmethod=marker
-set foldlevel=2 " 預設全部關閉
-let php_folding = 1 " 這個很重要
-set foldnestmax=3
-
-":cd C:\data\sites\source
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-"noremap <silent> <F11> :cal VimCommanderToggle()<CR>
