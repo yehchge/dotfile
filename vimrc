@@ -22,7 +22,7 @@ syntax on " syntax highlight
 set hlsearch " search highlighting
 
 if has("gui_running") " GUI color and font settings
-   set guifont=Osaka-Mono:h20
+   set guifont=Osaka-Mono:h10
    set background=dark
    "set background=dark
    set t_Co=256 " 256 color mode
@@ -61,7 +61,7 @@ let $LANG="zh_TW.UTF-8"
 set termencoding=utf8
 set encoding=utf-8
 "set gfn=Consolas:h12 " for windows
-set gfn=Monospace\ 14 " for Ubuntu
+set gfn=Monospace\ 10 " for Ubuntu
 set tabstop=4 "設定tab在vim裡頭佔用的空白格數
 "set expandtab "把tab轉為空白,即為按下tab時,實際上是4格空白
 
