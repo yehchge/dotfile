@@ -340,4 +340,5 @@ Ctrl-w =(回復各一半)
 >> 該行縮排
 << 該行反縮排
 
-
+Vim copy to clipboard:
+"+y
