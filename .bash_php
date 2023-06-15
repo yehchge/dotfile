@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# 需要先安裝 php composer
+# include php composer path
+export PATH="$PATH:$HOME/.composer/vendor/bin"

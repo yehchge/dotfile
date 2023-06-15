@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# 安裝 python３ 的 virtualenvwrapper
+# 給 Django 使用的虛擬環境
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh

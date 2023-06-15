@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# 安裝 node puppeteer
+export PUPPETEER_EXECUTABLE_PATH='/usr/bin/google-chrome'

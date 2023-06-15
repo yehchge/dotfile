@@ -1,0 +1,344 @@
+
+將整份文件內兩個以上的空白,都變成一個空白
+:%s/\s\{2,\}/ /g 
+
+:tab ball -->將所有在 buffer 內的檔案,都放到 tab 上去
+
+gt --> 下個 tab
+
+gT --> 上個 tab
+
+Ctrl-PgDn --> 下個 tab
+
+Ctrl-PgUp --> 上個 tab
+
+顯示檔案列表, 輸入 :Ex 或 :Explore 或 :Sexplore
+
+自動換行模式, 有些字元顯示成＠符號, 如何顯示實際的內容呢？
+set display=lastline 
+
+Function折疊, 輸入 zc
+將折疊的程式打開, 輸入 zo
+
+多視窗的切換, 輸入 Ctrl+w + Ctrl+w
+
+複製單行, 輸入 yy
+貼上單行, 輸入 pp 
+
+VIM 多檔編輯:
+
+開啟多的檔案後, 如果要看有哪些檔案, 可輸入
+:ls
+
+要看下個檔案, 可輸入
+:bn
+
+要看最後開的檔案, 可輸入
+:bl
+
+要看指定編號的檔案, 可輸入
+:b檔名或編號
+
+要把檔案從 Buffer List 移除, 可輸入
+:bd 
+
+Vim 詳細列出所有加入的套件：
+:scriptnames 
+
+寫程式時,需要快速找到相對映的大括號,中括號,小括號,可以按 % 去尋找!
+
+避免使用滑鼠時按到中間滾輪時是貼上
+" Mouse wheel for scroll only - disable middle button paste
+:map
+:imap 
+
+Highlight 命令(觀看Vim所有顏色的名稱)
+:so $VIMRUNTIME/syntax/hitest.vim
+
+試用了幾個想用Vim 打一些平常的紀錄,
+像task,也像todolist, 也像yaml ,
+所以上網找了一些格式的顏色,但是沒有看到比較好的,
+找到了 todolist.vim ,感覺還不錯, txt.vim 也不錯
+還有 yaml.vim , 不知道有沒有比較好的...還在找尋中.......
+
+設定為
+:set ft=todolsit
+:set ft=yaml
+:set ft=txt
+這些syntax 可以到 vim 的 script 內下載!!
+
+
+剛剛在 c9s 的 blog 中看到要修改並刪除一個字的按鍵:
+ciw -->還蠻好用的
+
+
+mb 的字元移除,但要小心,有時後移除後存檔,檔案文字會亂掉
+:set nobomb
+
+轉換編碼
+:e ++enc=ucs-2le xxxx(檔案名稱)
+:w ++enc=ucs-2le xxxx(檔案名稱) 
+
+將目前程式作縮排排版
+gg=G
+
+移動到檔案頭
+[]
+
+移動到檔案尾
+][
+
+找文件內的關鍵字
+在關鍵字上按 * 或是按 gd , 就會將關鍵字反白.
+
+搜尋多的檔案內中的關鍵字(搜尋所有php檔案,檔案裡面有test的關鍵字
+:vimgrep /test/*.php
+
+用vimgrep 搜尋完後,用 :copen 開啟搜尋後結果,
+或是用 :clist 觀看搜尋結果
+
+設定書籤(Markers), F5 設定此行 F6 移除此行書籤
+:highlight SignColumn guibg=darkgrey
+:sign define piet text=>> texthl=Search
+
+function! SignFixme()
+execute(":sign place ".line(".")." line=".line(".")." name=piet file=".expand("%:p"))
+endfunction
+map :call SignFixme()
+
+function! SignLines()
+execute(":sign unplace ".line("."))
+endfunction
+map :call SignLines()
+
+將vim中複製的資料,存到windows的剪貼簿
+用 shift+v , 框起需要複製的行數,
+之後,按下 Ctrl+C, 就會複製到 windows的剪貼簿內! 
+
+Vim 全選:
+ggVG
+
+消除^M:
+:%/^M//gg (^M 為 Ctrl+Q 再按 ctrl+M)
+
+將兩個以上空白替換成一個空白
+:%s/\([ ]\{2,\}\)/ /gg 
+
+設定如果有出現 Error 這個字的話, 就會將這個字以紅底白字顯示
+:match ErrorMsg /^Error/
+
+如果要看有哪些顏色群組可以用,可以下
+:so $VIMRUNTIME/syntax/hitest.vim
+
+移除效果:
+:match NONE
+
+自定顏色群組:
+highlight MyGroup ctermbg=red guibg=red guifg=yellow term=bold 
+
+Windows 下:
+視窗最大化: alt+space+x
+視窗最小化: alt+space+n
+視窗還原大小: alt+space+r
+
+Vim 下:
+回到行的最前面: 數字0
+回到行的最後面: $
+自動換行: :set wrap
+不換行: :set nowrap
+方向鍵:左、下、上、右:h、j、k、l
+複製一個字: yw
+複製資料到buffer內,才能用yy,p
+set nocompatible
+
+設定程式語法顏色開啟:
+syntax on
+syntax off (關閉)
+
+設定不要Toolbar
+:set guioptions-=T
+
+設定左邊有滾輪
+:set guioptions+=l
+
+設定可以左右移動的滾輪
+:set guioptions+=b
+
+設定Menu不顯示
+:set guioptions-=m
+
+設定右邊的滾輪不顯示
+:set guioptions-=r
+
+設定沒有GUI的TAB
+:set guioptions-=e
+
+設定游標整行會有顏色(Vim 7.0以上)
+:set cursorline
+
+設定游標整列會有顏色(Vim 7.0以上)
+:set cursorcolumn
+
+設定滑鼠模式:
+:behave mswin
+:behave xterm
+
+顯示看不見的字元
+:set list
+:set nolist
+
+選擇字體
+:set guifont=*
+
+設定檔案是否備份
+:set backup
+:set nobackup
+
+比較兩份文件
+先用 splite 的方式打開兩份文件
+:diffthis -->比較兩份文件
+:diffupdate -->更新比較
+
+跳出(離開)Vim
+:qa
+
+設定 Vim Session
+:browse mksession(mks) --> 儲存Session
+:mks session.vim --> 儲存Session
+:mks! session.vim --> 再次儲存Session
+vim -S session.vim --> 取出Session
+:source(so) session.vim --> 取出Session
+
+將行號加入到程式中
+:%! nl -ba
+
+加裝 MiniBufExplorer 之後, 所要使用的功能
+切換 miniBufExpl 視窗的開關
+:TMiniBufExplorer
+d 刪除Buff
+Ctrl+Tab 再按Shift+Tab (可以選擇Buff內的檔案)
+
+自動縮排:
+gg+v+G+=
+
+GVIM 下的Ctrl+v 可以用 Ctrl+Q 來替代
+
+所以, DOS下的有^M的符號,
+可以用 %s/^M//gg 來去除掉
+那個 ^ 是您要先按 Ctrl +V, 接下來M，要按 Ctrl +M。
+
+小數點可以重覆上個命令 .
+
+開始選區塊按 v, 選完後按 y 是複製
+
+觀看程式時, 選到要尋找的關鍵字處,
+按下 * 可以尋找下個相同的關鍵字 !
+
+用滑鼠將檔案拖曳(Drag)到Gvim後,會用tab開啟檔案
+To open each buffer in its own tabpage, add this to your vimrc:
+:au BufAdd,BufNewFile * nested tab sball
+
+quickfix windows 編譯程式時出現訊息的視窗,可以用 :copen 開啟此視窗! 
+
+在 FreeBSD 下使用 vim 時, 進入後執行 :syntax on 時, 出現錯誤如下：
+
+Error detected while processing /usr/local/share/vim/vim72/syntax/php.vim:
+line 479:
+E10: \ should be followed by /, ? or &
+
+上網查詢後，發現是vim 無法在 ~ 下自行產生 .vimrc 所造成的,
+
+所以必須要手動產生,
+執行 $touch ~/.vimrc
+$touch ~/.vimrc
+
+: 1,2 co 3 複製 1,2 行到第 3 行之後
+: 4,5 m 6 移動 4,5 行到第 6 行之後
+
+由 github 將 dotfile 專案抓回來
+先安裝 git core (在 ubuntu 底下)：
+＃sudo apt-get install git-core
+
+將專案 clone 回來(https的網址, 請參考專案的網址)
+# git clone https://userproject@github.com/userproject/dotfile.git
+
+將 dotfile 內的資料, 指到指定的資料夾內
+#cd ~/dotfile
+#ln -fs `pwd`/vim ~/.vim
+#ln -fs `pwd`/vimrc ~/.vimrc
+
+參考網站:
+http://huan-lin.blogspot.com/2011/05/git-basic-workflow.html
+http://c9s.blogspot.com/2009/11/git-dotfiles.html
+http://gavaee.wordpress.com/2011/10/11/git-安裝及使用/
+
+http://help.github.com/linux-set-up-git/
+http://antbsd.twbbs.org/~ant/wordpress/?p=3044
+
+" 設定TXT副檔名使用todolist的顏色格式
+au BufRead,BufNewFile *.txt setfiletype todotxt
+
+" 設定在按下Enter後可以新增一行
+" Insert newline without entering insert mode
+map O
+map o
+
+" 設定按下F3可以產生日期標記
+" To insert timestamp, press F3.
+nmap a=strftime(“%Y-%m-%d %a %I:%M %p")
+imap =strftime(“%Y-%m-%d %a %I:%M %p")
+
+" 設定可見的書籤
+" 設定書籤(Markers), F5 設定此行 F6 移除此行書籤
+:highlight SignColumn guibg=darkgrey
+:sign define piet text=>> texthl=Search
+
+function! SignFixme()
+execute(“:sign place “.line(“.")." line=".line(“.")." name=piet file=".expand(“%:p"))
+endfunction
+map :call SignFixme()
+
+function! SignLines()
+execute(“:sign unplace “.line(“."))
+endfunction
+map :call SignLines()
+
+" 設定移動 buffers(需配合minibufexpl.vim套件)
+map :bn
+map :bp
+
+" 設定關閉 swap 功能
+:set noswf
+
+" 設定按 Ctrl+s 存檔
+:nmap :w
+:imap :w
+
+" 設定PHP摺疊
+set foldmarker={{{,}}}
+set foldmethod=marker
+set foldlevel=2 " 預設全部關閉
+let php_folding = 1 " 這個很重要
+set foldnestmax=3
+
+橫切視窗 (也可用Ctrl-W  + S)
+:sp filename
+
+直切視窗 (也可以用Ctrl-W + V)
+:vsp filename
+
+Ctrl-w +(放大)
+Ctrl-w -(縮小)
+Ctrl-w _(放到最大)
+Ctrl-w =(回復各一半)
+:vsp 視窗放大縮小可用
+Ctrl-w |(放到最大)
+Ctrl-w =(回復各一半)
+
+:set mouse=a   啟動滑鼠功能
+
+>> 該行縮排
+<< 該行反縮排
+
+Vim copy to clipboard:
+"+y

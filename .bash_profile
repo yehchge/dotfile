@@ -130,41 +130,4 @@ unset color_prompt force_color_prompt
 
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
-# 安裝 python virtualenvwrapper 給 Django 使用的虛擬環境
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
 
-
-
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/home/bill/.config/composer/vendor/bin
-
-#npm config set proxy http://172.16.1.52:3128
-#npm config set https-proxy http://172.16.1.52:3128
-
-export http_proxy=http://172.16.1.52:3128
-export https_proxy=http://172.16.1.52:3128
-export PUPPETEER_EXECUTABLE_PATH='/usr/bin/google-chrome'
-
-#!/bin/bash
-# ┌─────────────────────────────────────────────────────────────────┐
-# │ Bash Includes                                                   │
-# └─────────────────────────────────────────────────────────────────┘
-# ╔═════════════════════════════════════════════════════════════════╗
-# ║ Source Files: Bash Includes                                     ║
-# ╠═════════════════════════════════════════════════════════════════╣
-# ║ (1) .bash_var comes first                                       ║
-# ║ (2) .bash_vendor come second (incase of alias-ing)              ║
-# ║ (3) ...rest                                                     ║
-# ╚═════════════════════════════════════════════════════════════════╝
-# For private exports [Don't place in git]
-[[ -f $HOME/.bash_git ]] && source $HOME/.bash_git
-[[ -f $HOME/.bash_php ]] && source $HOME/.bash_php
-[[ -f $HOME/.bash_python ]] && source $HOME/.bash_python
-[[ -f $HOME/.bash_nodejs ]] && source $HOME/.bash_nodejs
-
-
-alias config='/usr/bin/git --git-dir=/home/bill/.cfg/ --work-tree=/home/bill'
