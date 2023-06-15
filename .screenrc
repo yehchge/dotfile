@@ -1,0 +1,53 @@
+# 設定每個視窗的標題
+
+# 設定總是顯示 screen 的狀態列
+#hardstatus alwayslastline " %-Lw%{= Bw}%n%f %t%{-}%+Lw %=| %0c:%s "
+
+# 設定預設的文字編碼
+defencoding utf8
+
+# 設定 C-a b 後可看直接看到 big-5 編碼的文字，不用再切換 pietty 的字元編碼設定
+bind b encoding big5 utf8 # convert big5 to utf8
+# C-a u 後切回可以直看 utf-8 編碼的文字，不用再切換 pietty 的字元編碼設定
+bind u encoding utf8 utf8
+
+# 設定視窗回捲時可看到的行數
+defscrollback 2048
+
+
+#version1
+caption always "%{= wk} %{= KY} [%n]%t @ %H %{-} %= %{= KR} %l %{-} | %{= KG} %Y-%m-%d %{-} "
+hardstatus alwayslastline " %-Lw%{= Bw}%n%f %t%{-}%+Lw %=| %0c:%s "
+
+
+#screen -t C136  1 ssh root@172.16.2.136
+#screen -t c137  2 ssh root@172.16.2.137
+#screen -t c138  3 ssh root@172.16.2.138
+#screen -t c139  4 ssh root@172.16.2.139
+#screen -t c140  5 ssh root@172.16.2.140
+#screen -t c141  6 ssh root@172.16.2.141
+#screen -t c142  7 ssh root@172.16.2.142
+#screen -t c143  8 ssh root@172.16.2.143
+#screen -t c144  9 ssh root@172.16.2.144
+#screen -t c145 10 ssh root@172.16.2.145
+#screen -t c146 11 ssh root@172.16.2.146
+#screen -t c147 12 ssh root@172.16.2.147
+#screen -t c148 13 ssh root@172.16.2.148
+#screen -t c149 14 ssh root@172.16.2.149
+#screen -t c150 15 ssh root@172.16.2.150
+#screen -t c151 16 ssh root@172.16.2.151
+#screen -t c152 17 ssh root@172.16.2.152
+#screen -t c153 18 ssh root@172.16.2.153
+#screen -t c154 19 ssh root@172.16.2.154
+#screen -t c155 20 ssh root@172.16.2.155
+#screen -t c156 21 ssh root@172.16.2.156
+#screen -t c157 22 ssh root@172.16.2.157
+#screen -t c158 23 ssh root@172.16.2.158
+#screen -t c159 24 ssh root@172.16.2.159
+#screen -t c160 25 ssh root@172.16.2.160
+#screen -t c161 26 ssh root@172.16.2.161
+#screen -t c162 27 ssh root@172.16.2.162
+#screen -t c163 28 ssh root@172.16.2.163
+#screen -t c164 29 ssh root@172.16.2.164
+#screen -t c165 30 ssh root@172.16.2.165
+
