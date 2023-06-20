@@ -145,8 +145,8 @@ export PATH=$PATH:/home/bill/.config/composer/vendor/bin
 #npm config set proxy http://172.16.1.52:3128
 #npm config set https-proxy http://172.16.1.52:3128
 
-export http_proxy=http://172.16.1.52:3128
-export https_proxy=http://172.16.1.52:3128
+#export http_proxy=http://172.16.1.52:3128
+#export https_proxy=http://172.16.1.52:3128
 export PUPPETEER_EXECUTABLE_PATH='/usr/bin/google-chrome'
 
 #!/bin/bash
