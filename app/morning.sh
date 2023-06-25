@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt -y dist-upgrade
-sudo apt -y autoremove
+sudo apt dist-upgrade -y
+sudo apt autoremove -y
 sudo service apache2 start
 

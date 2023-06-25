@@ -130,17 +130,8 @@ unset color_prompt force_color_prompt
 
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
-# 安裝 python virtualenvwrapper 給 Django 使用的虛擬環境
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
-
-
-
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/home/bill/.config/composer/vendor/bin
+export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
 #npm config set proxy http://172.16.1.52:3128
 #npm config set https-proxy http://172.16.1.52:3128
@@ -167,4 +158,12 @@ export PUPPETEER_EXECUTABLE_PATH='/usr/bin/google-chrome'
 [[ -f $HOME/.bash_nodejs ]] && source $HOME/.bash_nodejs
 
 
-alias config='/usr/bin/git --git-dir=/home/bill/.cfg/ --work-tree=/home/bill'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# 安裝 python virtualenvwrapper 給 Django 使用的虛擬環境
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+
