@@ -136,8 +136,8 @@ export PATH=$PATH:$HOME/.config/composer/vendor/bin
 #npm config set proxy http://172.16.1.52:3128
 #npm config set https-proxy http://172.16.1.52:3128
 
-export http_proxy=http://172.16.1.52:3128
-export https_proxy=http://172.16.1.52:3128
+#export http_proxy=http://172.16.1.52:3128
+#export https_proxy=http://172.16.1.52:3128
 export PUPPETEER_EXECUTABLE_PATH='/usr/bin/google-chrome'
 
 #!/bin/bash
@@ -167,3 +167,7 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
