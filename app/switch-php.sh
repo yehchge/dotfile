@@ -18,8 +18,8 @@ sudo update-alternatives --set php /usr/bin/php${PHP_VERSION}
 echo "CLI PHP switched to version ${PHP_VERSION}"
 
 # Switch Apache PHP-FPM
-sudo systemctl stop php8.3-fpm php8.4-fpm php8.2-fpm php8.1-fpm php8.0-fpm php7.2-fpm php7.0-fpm php5.6-fpm
-sudo a2disconf php8.3-fpm php8.4-fpm php8.2-fpm php8.1-fpm php8.0-fpm php7.2-fpm php7.0-fpm php5.6-fpm
+sudo systemctl stop php8.3-fpm php8.4-fpm php8.2-fpm php8.1-fpm php8.0-fpm php7.2-fpm php7.0-fpm
+sudo a2disconf php8.3-fpm php8.4-fpm php8.2-fpm php8.1-fpm php8.0-fpm php7.2-fpm php7.0-fpm
 sudo a2enconf php${PHP_VERSION}-fpm
 sudo systemctl start php${PHP_VERSION}-fpm
 sudo systemctl restart apache2
