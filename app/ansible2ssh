@@ -1,0 +1,44 @@
+#!/bin/bash
+# ansible2ssh - 將 Ansible inventory 轉成 ~/.ssh/config
+
+INVENTORY=${1:-hosts.yml}    # 預設讀取當前目錄的 inventory.ini
+CONFIG="$HOME/.ssh/config"
+
+if ! command -v ansible-inventory >/dev/null 2>&1; then
+    echo "❌ 未安裝 ansible，請先執行：sudo apt install ansible -y"
+    exit 1
+fi
+
+if [ ! -f "$INVENTORY" ]; then
+    echo "❌ 找不到 $INVENTORY"
+    exit 1
+fi
+
+echo "🔄 讀取 $INVENTORY，更新 $CONFIG ..."
+
+# 先備份舊檔
+cp "$CONFIG" "$CONFIG.bak.$(date +%Y%m%d%H%M%S)" 2>/dev/null
+
+# 將 ansible inventory 轉成 JSON，再抓出 host 資訊
+ansible-inventory -i "$INVENTORY" --list --yaml | \
+grep -E '^[a-zA-Z0-9_.-]+:' | \
+sed 's/://g' | while read -r HOST; do
+    # 從 ansible-inventory 取變數
+    HOSTNAME=$(ansible-inventory -i "$INVENTORY" --host "$HOST" | grep ansible_host | awk '{print $2}')
+    USER=$(ansible-inventory -i "$INVENTORY" --host "$HOST" | grep ansible_user | awk '{print $2}')
+    PORT=$(ansible-inventory -i "$INVENTORY" --host "$HOST" | grep ansible_port | awk '{print $2}')
+    [ -z "$PORT" ] && PORT=22
+
+    # 寫入 ~/.ssh/config
+    cat >>"$CONFIG" <<EOF
+
+Host $HOST
+    HostName $HOSTNAME
+    User ${USER:-$USER}
+    Port $PORT
+EOF
+done
+
+echo "✅ 已更新 $CONFIG"
+echo "💡 現在可以直接用：ssh <host> 連線"
+
