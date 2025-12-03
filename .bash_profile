@@ -131,3 +131,6 @@ unset color_prompt force_color_prompt
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 
+
+# Created by `pipx` on 2025-11-05 10:12:58
+export PATH="$PATH:/home/bill-yeh/.local/bin"

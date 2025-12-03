@@ -154,3 +154,7 @@ export GTK_IM_MODULE=fcitx
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Created by `pipx` on 2025-11-05 10:12:58
+export PATH="$PATH:/home/bill-yeh/.local/bin"
+
